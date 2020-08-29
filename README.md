@@ -2,30 +2,30 @@
 集合关联工具类
 =======
 
-因为Salesforce平台里的SOQL语句不支持两个没有做lookup关系的对象之间的关联查询，
-该工具类，提供类似sql语句中通过关键字段进行inner join和left join的关联操作。是对目前SOQL一些不足的补充
+因为Salesforce平台里的SOQL语句不支持两个没有做lookup关系的对象之间的关联查询，<br>
+该工具类，提供类似sql语句中通过关键字段进行inner join和left join的关联操作。是对目前SOQL一些不足的补充。<br>
 
 功能：
 -----
-  *支持多个List<SObjects>通过关键字段 进行 inner join、left join 操作
-  *第一级join 允许多个字段进行关联查询，但是必须是同一个对象；在第二级及以上join查询只支持关联一个字段
-  *涉及的key默认都是小写
+  *支持多个List<SObjects>通过关键字段 进行 inner join、left join 操作<br>
+  *第一级join 允许多个字段进行关联查询，但是必须是同一个对象；在第二级及以上join查询只支持关联一个字段<br>
+  *涉及的key默认都是小写<br>
   
 
 目前支持三种格式的返回
 ------
 1、ToMapsList
-每一行记录被组装到一个Map集合中，Map集合中的key对应字段名，value对应字段值
-整个记录装成一个List，最终格式是List<Map<string,Object>>
+每一行记录被组装到一个Map集合中，Map集合中的key对应字段名，value对应字段值；<br>
+整个记录装成一个List，最终格式是List<Map<string,Object>>。
 
 2、ToJsonList
-每一行记录解析成一个json格式的字符串
-整个记录组装成一个List，最终格式是List<String>
+每一行记录解析成一个json格式的字符串；<br>
+整个记录组装成一个List，最终格式是List<String>。<br>
  
 3、ToObjectList 
-每一行记录都解析赋值到一个对象
-整个记录组装成一个List，最终格式是List<Object>
-在使用这个方法的时候，需要预先定义一个用来接受数据的对象，该对象的定义跟下面定义的fiedMap集合中的Value值对应，
+每一行记录都解析赋值到一个对象；<br>
+整个记录组装成一个List，最终格式是List<Object>。<br>
+在使用这个方法的时候，需要预先定义一个用来接受数据的对象，该对象的定义跟下面定义的fiedMap集合中的Value值对应，<br>
 可以将对象中定义的字段理解为，要查询对象字段的所要输出别名。
  
  ```
