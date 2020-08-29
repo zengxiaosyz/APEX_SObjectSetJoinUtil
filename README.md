@@ -24,6 +24,7 @@
 整个记录组装成一个List，最终格式是List<Object>
 在使用这个方法的时候，需要预先定义一个用来接受数据的对象，该对象的定义跟下面定义的fiedMap集合中的Value值对应，
 可以将对象中定义的字段理解为，要查询对象字段的所要输出别名。
+ 
 public class Test_Accounts extends BaseCustomObjectClass{
         public String new_id;
         public String new_Name;
